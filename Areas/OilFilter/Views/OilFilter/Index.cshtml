@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "OSMS - Oil Filter";
+}
+
+<div class="row" id="oilFilterBinding">
+        <div class="clearfix">
+            <h1 class="pull-left" style=" padding-top: 17px; position: absolute;">Oil Filters</h1>
+        </div>
+        <div class="row searchFilterSection" style="margin-top: 60px;">
+            <div class="well" data-bind="with: $root">
+                <form class="form-horizontal" data-bind="submit: searchOilFilter">
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" placeholder="<Search>" data-bind="value: searchFilter" />
+                    </div>
+                    <div class="col-xs-3">
+                        <select class="form-control" data-bind="options: $root.oilFilterMakers, optionsText: 'oilFilterMakerName', optionsValue: 'oilFilterMakerId', optionsCaption: '--Select Company--', value: oilFilterMakerCompanyFilter"></select>
+                    </div>
+                    <div class="col-xs-1">
+                        <div id="createButton">
+                            <button type="button" class="btn btn-default" data-bind="click: createOilFilter">Create New</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success" data-bind="click: searchOilFilter">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row searchFilterResultSection">
+            <div class="well">
+                <table id="" class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Filter</th>
+                            <th>Company</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: oilFilters">
+                        <tr data-bind="click: $root.selectOilFilters">
+                            <td data-bind="text: oilFilterName"></td>
+                            <td data-bind="text: oilFilterMakerCompanyName"></td>
+                            <td data-bind="text: oilFilterPrice"></td>
+                            <td>
+                                <!-- ko template: { name: 'editActionTemplate' } -->
+                                <!-- /ko -->
+                            </td>
+                            <td>
+                                <!-- ko template: { name: 'deleteActionTemplate' } -->
+                                <!-- /ko -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                @Html.Partial("~/Areas/Common/Views/Shared/_Pager.cshtml")
+
+            </div>
+
+        </div>
+
+
+        <script id="deleteActionTemplate" type="text/html">
+            <a href="#" title="Delete Oil Filter"><span class="glyphicon glyphicon-remove" data-bind="click: $root.onDeleteOilFilter"></span></a>
+        </script>
+
+        <script id="editActionTemplate" type="text/html">
+            <a href="#" title="Edit in Form"><span class="glyphicon glyphicon-edit" data-bind="click: $root.onEditOilFilter"></span></a>
+        </script>
+
+        @Html.Partial("_oilFilterDialog")
+    </div>
+
+    <!-- ko stopBinding: true -->
+    @Html.Partial("~/Areas/Common/Views/Shared/_ConfirmationDialog.cshtml")
+    <!-- /ko -->
+    @section inlinescripts
+    {
+        <script type="text/javascript">
+            //add link in require config
+            require(["oilFilter/oilFilter.view", "common/confirmation.view"]);
+        </script>
+    }

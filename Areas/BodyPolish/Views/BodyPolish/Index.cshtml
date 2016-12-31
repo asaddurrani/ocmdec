@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" id="bodyPolishBinding">
+    <div class="clearfix">
+        <h1 class="pull-left" style=" padding-top: 17px; position: absolute;">BodyPolishs</h1>
+    </div>
+    <div class="row searchFilterSection" style="margin-top: 60px;">
+        <div class="well" data-bind="with: $root">
+            <form class="form-horizontal" data-bind="submit: searchBodyPolish">
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="<Search>" data-bind="value: searchFilter" />
+                </div>
+                <div class="col-xs-3">
+                    <select class="form-control" data-bind="options: $root.bodyPolishMakers, optionsText: 'bodyPolishMakerName', optionsValue: 'bodyPolishMakerId', optionsCaption: '--Select Company--', value: bodyPolishMakerCompanyFilter"></select>
+                </div>
+                <div class="col-xs-1">
+                    <div id="createButton">
+                        <button type="button" class="btn btn-default" data-bind="click: createBodyPolish">Create New</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" data-bind="click: searchBodyPolish">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row searchFilterResultSection">
+        <div class="well">
+            <table id="" class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Name </th>
+                        <th>Power</th>
+                        <th>Milage</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: bodyPolishs">
+                    <tr data-bind="click: $root.selectBodyPolish">
+                        <td data-bind="text: bodyPolishMakerCompanyName"></td>
+                        <td data-bind="text: bodyPolishName"></td>
+                        <td data-bind="text: bodyPolishPower"></td>
+                        <td data-bind="text: bodyPolishAverageMilage"></td>
+                        <td data-bind="text: bodyPolishPrice"></td>
+                        <td>
+                            <!-- ko template: { name: 'editActionVehicleTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                        <td>
+                            <!-- ko template: { name: 'deleteActionVehicleTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @Html.Partial("~/Areas/Common/Views/Shared/_Pager.cshtml")
+
+        </div>
+
+    </div>
+
+
+    <script id="deleteActionVehicleTemplate" type="text/html">
+        <a href="#" title="Delete Vehicle"><span class="glyphicon glyphicon-remove" data-bind="click: $root.onDeleteBodyPolish"></span></a>   
+    </script>
+
+    <script id="editActionVehicleTemplate" type="text/html">
+        <a href="#" title="Edit in Form"><span class="glyphicon glyphicon-edit" data-bind="click: $root.onEditBodyPolish"></span></a>   
+    </script>
+
+    @Html.Partial("_bodyPolishDialog")
+</div>
+
+<!-- ko stopBinding: true -->
+@Html.Partial("~/Areas/Common/Views/Shared/_ConfirmationDialog.cshtml")
+<!-- /ko -->
+@section inlinescripts
+{
+    <script type="text/javascript">
+        //add link in require config
+        require(["bodyPolish/bodyPolish.view", "common/confirmation.view"]);
+    </script>
+}

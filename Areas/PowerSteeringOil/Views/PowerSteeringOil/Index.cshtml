@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" id="powerSteeringOilBinding">
+    <div class="clearfix">
+        <h1 class="pull-left" style=" padding-top: 17px; position: absolute;">Power Steering Oil</h1>
+    </div>
+    <div class="row searchFilterSection" style="margin-top: 60px;">
+        <div class="well" data-bind="with: $root">
+            <form class="form-horizontal" data-bind="submit: searchPowerSteeringOil">
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="<Search>" data-bind="value: searchFilter" />
+                </div>
+
+                <div class="col-xs-1">
+                    <div id="createButton">
+                        <button type="button" class="btn btn-default" data-bind="click: createPowerSteeringOil">Create New</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" data-bind="click: searchPowerSteeringOil">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row searchFilterResultSection">
+        <div class="well">
+            <table id="" class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Price </th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: powerSteeringOils">
+                    <tr data-bind="click: $root.selectPowerSteeringOil">
+                        <td data-bind="text: powerSterringOilName"></td>
+                        <td data-bind="text: powerSterringOilCompany"></td>
+                        <td data-bind="text: powerSterringOilPrice"></td>
+                        <td>
+                            <!-- ko template: { name: 'editTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                        <td>
+                            <!-- ko template: { name: 'deleteTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @Html.Partial("~/Areas/Common/Views/Shared/_Pager.cshtml")
+
+        </div>
+
+    </div>
+
+
+    <script id="deleteTemplate" type="text/html">
+        <a href="#" title="Delete"><span class="glyphicon glyphicon-remove" data-bind="click: $root.onDeletePowerSteeringOil"></span></a>
+    </script>
+
+    <script id="editTemplate" type="text/html">
+        <a href="#" title="Edit in Form"><span class="glyphicon glyphicon-edit" data-bind="click: $root.onEditPowerSteeringOil"></span></a>
+    </script>
+
+    @Html.Partial("_powerSteeringOilDialog")
+</div>
+
+<!-- ko stopBinding: true -->
+@Html.Partial("~/Areas/Common/Views/Shared/_ConfirmationDialog.cshtml")
+<!-- /ko -->
+@section inlinescripts
+    {
+    <script type="text/javascript">
+        //add link in require config
+        require(["powerSteeringOil/powerSteeringOil.view", "common/confirmation.view"]);
+    </script>
+}

@@ -1,0 +1,36 @@
+﻿<div class="well col-md-12" id="productEditor" data-bind="visible: isProductEditorVisible, with: selectedProduct" style="display: none;">
+    <h2 class="sectionHeader">
+        <span><a href="#" class="custom-link" id="link-action" data-bind="click: $root.onCloseProductEditor">< Back</a></span>
+        <span>Product Editor</span>
+    </h2>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="productName" class="control-label col-sm-2">Name</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="<Name>" id="productName" data-bind="value: name, validationTooltip: name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productDescription" class="control-label col-sm-2">Description</label>
+            <div class="col-md-3">
+                <input type="text" placeholder="<Description>" class="form-control" id="productDescription" data-bind="value: description" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productPrice" class="control-label col-sm-2">Price</label>
+            <div class="col-md-3">
+                <input type="text" placeholder="<Price>" class="form-control" id="productPrice" data-bind="value: price, validationTooltip: price" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productCategory" class="control-label col-sm-2">Category</label>
+            <div class="col-md-3">
+                <select id="productCategory" class="form-control" data-bind="options: $root.categories, optionsText: 'Name', optionsValue: 'Id', optionsCaption: '<Category>', value: categoryId, validationTooltip: categoryId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn" id="saveBtn" data-bind="click: $root.onSaveProduct, enable: hasChanges, css: { 'btn-warning': hasChanges }">Save</button>
+        </div>
+    </form>
+</div>
+

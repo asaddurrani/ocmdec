@@ -1,0 +1,86 @@
+﻿
+
+
+<div class="modal fade" id="oilDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div style="width: 838px;" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="dialgHeaderPadding">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Add/Edit Oil</h4>
+            </div>
+            <div class="col-lg-12 form-horizontal outerDiv-Padding" data-bind="with: $root.selectedOil">
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="vehicleMaker" class="control-label text-right tooltip-float">Choose Oil Maker Company</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <select class="form-control" data-bind="options: $root.oilMakerCompaniesListForDialog, optionsText: 'oilMakerName', optionsValue: 'oilMakerId', optionsCaption: '--Select Company--', value: oilMakerId"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-content="Sort Order in Category" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="oilName" class="control-label text-right tooltip-float">Oil Name</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="oilName" data-bind="value: oilName, validationTooltip: oilName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-content="Sort Order in Category" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="oilPower" class="control-label text-right tooltip-float">Oil Power</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="oilPower" data-bind="value: oilPower, validationTooltip: oilPower">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-content="Sort Order in Category" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="oilAverageMilage" class="control-label text-right tooltip-float">Oil Average Milage</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="oilAverageMilage" data-bind="value: oilAverageMilage, validationTooltip: oilAverageMilage">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-content="Sort Order in Category" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="oilPrice" class="control-label text-right tooltip-float">Oil Price</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="oilPrice" data-bind="value: oilPrice, validationTooltip: oilPrice">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: $root.onSaveOil">Save</button>
+                <button type="button" class="btn btn-default" style="margin-left: 0px;" data-bind="click: $root.onCloseOilDialog">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Wizard Popup ends here*@

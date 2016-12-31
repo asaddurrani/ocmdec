@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" id="vehicleBinding">
+    <div class="clearfix">
+        <h1 class="pull-left" style=" padding-top: 17px; position: absolute;">Vehicles</h1>
+    </div>
+    <div class="row searchFilterSection" style="margin-top: 60px;">
+        <div class="well" data-bind="with: $root">
+            <form class="form-horizontal" data-bind="submit: searchVehicle">
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="<Search>" data-bind="value: searchFilter" />
+                </div>
+                <div class="col-xs-3">
+                    <select class="form-control" data-bind="options: $root.vehiclesMakers, optionsText: 'vehicleMakerName', optionsValue: 'vehicleMakerId', optionsCaption: '--Select Maker--', value: vehicleMakerFilter"></select>
+                </div>
+                <div class="col-xs-1">
+                    <div id="createButton">
+                        <button type="button" class="btn btn-default" data-bind="click: createVehicle">Create New</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" data-bind="click: searchVehicle">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row searchFilterResultSection">
+        <div class="well">
+            <table id="" class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th >Vehicle Maker</th>
+                        <th>Vehicle Model</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: vehicles">
+                    <tr data-bind="click: $root.selectVehicle">
+                        <td data-bind="text: vehicleMakerName"></td>
+                        <td data-bind="text: vehicleModelName"></td>
+                        <td>
+                            <!-- ko template: { name: 'editActionVehicleTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                        <td>
+                            <!-- ko template: { name: 'deleteActionVehicleTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+                    @*<!-- ko template: { name: itemVehicleTemplate , foreach: vehicles } -->
+            <!-- /ko -->*@
+                </tbody>
+            </table>
+            @Html.Partial("~/Areas/Common/Views/Shared/_Pager.cshtml")
+            
+        </div>
+        
+    </div>
+
+
+    <script id="deleteActionVehicleTemplate" type="text/html">
+        <a href="#" title="Delete Vehicle"><span class="glyphicon glyphicon-remove" data-bind="click: $root.onDeleteVehicle"></span></a>
+    </script>
+
+    <script id="editActionVehicleTemplate" type="text/html">
+        <a href="#" title="Edit in Form"><span class="glyphicon glyphicon-edit" data-bind="click: $root.onEditVehicle"></span></a>
+    </script>
+
+    <script id="editVehicleTemplate" type="text/html">
+        <tr data-bind="css: { selectedRow: $data === $root.selectedVehicle() }">
+            <td class="col-md-2">
+                <input type="text" class="form-control" data-bind="value: name, validationTooltip: vehicleMakerName" />
+            </td>
+            <td class="col-md-2">
+                <input type="text" class="form-control" data-bind="value: vehicleModelName" />
+            </td>
+            <!-- ko template: { name: 'editActionVehicleTemplate' } -->
+            <!-- /ko -->
+            <td>
+                <!-- ko template: { name: 'deleteActionVehicleTemplate' } -->
+                <!-- /ko -->
+            </td>
+        </tr>
+    </script>
+
+    <script id="itemVehicleTemplate" type="text/html">
+        <tr>
+            <td>asddasd</td>
+            <td>asddasd</td>
+        </tr>
+        <tr data-bind="click: $root.selectVehicle">
+            <td data-bind="text: vehicleMakerName"></td>
+            <td data-bind="text: vehicleModelName"></td>
+            @*<td>
+                <!-- ko template: { name: 'editActionVehicleTemplate' } -->
+                    <!-- /ko -->
+            </td>
+            <td>
+                <!-- ko template: { name: 'deleteActionVehicleTemplate' } -->
+                    <!-- /ko -->
+            </td>*@
+        </tr>
+    </script>
+
+    @Html.Partial("_VehicleEditor")
+
+</div>
+
+<!-- ko stopBinding: true -->
+@Html.Partial("~/Areas/Common/Views/Shared/_ConfirmationDialog.cshtml")
+<!-- /ko -->
+@section inlinescripts
+{
+    <script type="text/javascript">
+        //add link in require config
+        require(["vehicle/vehicle.view", "common/confirmation.view"]);
+    </script>
+}

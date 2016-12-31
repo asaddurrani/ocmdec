@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" id="autoTransFluidBinding">
+    <div class="clearfix">
+        <h1 class="pull-left" style=" padding-top: 17px; position: absolute;">AutoTransFluids</h1>
+    </div>
+    <div class="row searchFilterSection" style="margin-top: 60px;">
+        <div class="well" data-bind="with: $root">
+            <form class="form-horizontal" data-bind="submit: searchAutoTransFluid">
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="<Search>" data-bind="value: searchFilter" />
+                </div>
+                <div class="col-xs-3">
+                    <select class="form-control" data-bind="options: $root.autoTransFluidMakers, optionsText: 'autoTransFluidMakerName', optionsValue: 'autoTransFluidMakerId', optionsCaption: '--Select Company--', value: autoTransFluidMakerCompanyFilter"></select>
+                </div>
+                <div class="col-xs-1">
+                    <div id="createButton">
+                        <button type="button" class="btn btn-default" data-bind="click: createAutoTransFluid">Create New</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" data-bind="click: searchAutoTransFluid">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row searchFilterResultSection">
+        <div class="well">
+            <table id="" class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Name </th>
+                        <th>Power</th>
+                        <th>Milage</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: autoTransFluids">
+                    <tr data-bind="click: $root.selectAutoTransFluid">
+                        <td data-bind="text: autoTransFluidMakerCompanyName"></td>
+                        <td data-bind="text: autoTransFluidName"></td>
+                        <td data-bind="text: autoTransFluidPower"></td>
+                        <td data-bind="text: autoTransFluidAverageMilage"></td>
+                        <td data-bind="text: autoTransFluidPrice"></td>
+                        <td>
+                            <!-- ko template: { name: 'editActionVehicleTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                        <td>
+                            <!-- ko template: { name: 'deleteActionVehicleTemplate' } -->
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @Html.Partial("~/Areas/Common/Views/Shared/_Pager.cshtml")
+
+        </div>
+
+    </div>
+
+
+    <script id="deleteActionVehicleTemplate" type="text/html">
+        <a href="#" title="Delete Vehicle"><span class="glyphicon glyphicon-remove" data-bind="click: $root.onDeleteAutoTransFluid"></span></a>   
+    </script>
+
+    <script id="editActionVehicleTemplate" type="text/html">
+        <a href="#" title="Edit in Form"><span class="glyphicon glyphicon-edit" data-bind="click: $root.onEditAutoTransFluid"></span></a>   
+    </script>
+
+    @Html.Partial("_autoTransFluidDialog")
+</div>
+
+<!-- ko stopBinding: true -->
+@Html.Partial("~/Areas/Common/Views/Shared/_ConfirmationDialog.cshtml")
+<!-- /ko -->
+@section inlinescripts
+{
+    <script type="text/javascript">
+        debugger
+        //add link in require config
+        require(["autoTransFluid/autoTransFluid.view", "common/confirmation.view"]);
+    </script>
+}

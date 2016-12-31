@@ -1,0 +1,46 @@
+﻿
+
+<div class="modal fade" id="vehiclesDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div style="width: 838px;" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="dialgHeaderPadding">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Add/Edit Vehicle</h4>
+            </div>
+            <div class="col-lg-12 form-horizontal outerDiv-Padding" data-bind="with: $root.selectedVehicle">
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="vehicleMaker" class="control-label text-right tooltip-float">Chose Vehicle Maker</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <select id="vehicleMaker" class="form-control" data-bind="options: $root.vehiclesMakersListForDialog,optionsText: 'vehicleMakerName',value: vehicleMakerId,optionsCaption: 'Choose Maker'"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 text-right">
+                        <div class="bs-example-tooltips tooltip-float-width">
+                            <a class="input-group-addon" style="text-decoration: none; border: 0; cursor: pointer;" data-container="body" data-toggle="popover" data-placement="right" data-content="Sort Order in Category" data-original-title="" title="">
+                                <span class="label label-circle-question">&nbsp;&nbsp;?&nbsp;&nbsp;</span>
+                            </a>
+                        </div>
+                        <label for="vehicleModelName" class="control-label text-right tooltip-float">Vehicle Name</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="vehicleModelName" data-bind="value: vehicleModelName, validationTooltip: vehicleModelName">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: $root.onSaveVehicle">Save</button>   
+                <button type="button" class="btn btn-default" style="margin-left: 0px;" data-bind="click: $root.onCloseVehicleDialog">Close</button>  
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Wizard Popup ends here*@
