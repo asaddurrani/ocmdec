@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -14,6 +14,14 @@
           <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Model" Type="varbinary(max)" Nullable="false" />
           <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AirFilters">
+          <Key>
+            <PropertyRef Name="AilFilterId" />
+          </Key>
+          <Property Name="AilFilterId" Type="int" Nullable="false" />
+          <Property Name="AirFilterName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AirFilterPrice" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -59,6 +67,327 @@
           <Property Name="SecurityStamp" Type="nvarchar(max)" />
           <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
         </EntityType>
+        <EntityType Name="AutoTransFuels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="BodyPolishes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="BodyWaxes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="BrakeOils">
+          <Key>
+            <PropertyRef Name="BrakeOilId" />
+          </Key>
+          <Property Name="BrakeOilId" Type="int" Nullable="false" />
+          <Property Name="BrakeOilName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrakeOilCompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrakeOilPrice" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarShampoos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Coolents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerMiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerMobileNumber1" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerMobileNumber2" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerLandline" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerEmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="CustomerCreatedDate" Type="datetime" />
+          <Property Name="CustomerDescription" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="CustomerVehicles">
+          <Key>
+            <PropertyRef Name="CustomerVehicleId" />
+          </Key>
+          <Property Name="CustomerVehicleId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="VehicleId" Type="bigint" />
+          <Property Name="VehiclePlateAlphabets" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehiclePlateNumbers" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehiclePlateYear" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleManufacturingYear" Type="int" />
+          <Property Name="VehicleDailyRunningKms" Type="int" />
+        </EntityType>
+        <EntityType Name="Distributors">
+          <Key>
+            <PropertyRef Name="DistributorId" />
+          </Key>
+          <Property Name="DistributorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistributorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Dustors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="EngineSprays">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="InternalSprays">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="ManualTransFuels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="MicroFibres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="OilChangeRecords">
+          <Key>
+            <PropertyRef Name="OilChangeRecordId" />
+          </Key>
+          <Property Name="OilChangeRecordId" Type="int" Nullable="false" />
+          <Property Name="OilCustomerId" Type="int" />
+          <Property Name="OilId" Type="int" />
+          <Property Name="CustomerVehicleId" Type="int" />
+        </EntityType>
+        <EntityType Name="OilFilterMakerCompanies">
+          <Key>
+            <PropertyRef Name="OilFilterMakerCompanyId" />
+          </Key>
+          <Property Name="OilFilterMakerCompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OilFilterMakerCompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OilFilterMakerCompanyDescription" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="OilFilters">
+          <Key>
+            <PropertyRef Name="OilFilterId" />
+          </Key>
+          <Property Name="OilFilterId" Type="int" Nullable="false" />
+          <Property Name="OilFilterName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OilFilterPrice" Type="float" Nullable="false" />
+          <Property Name="OilFilterMakerCompanyId" Type="int" />
+        </EntityType>
+        <EntityType Name="OilMakerCompanies">
+          <Key>
+            <PropertyRef Name="OilMakerId" />
+          </Key>
+          <Property Name="OilMakerId" Type="int" Nullable="false" />
+          <Property Name="OilMakerName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OilNetWeights">
+          <Key>
+            <PropertyRef Name="OilNetWeightId" />
+          </Key>
+          <Property Name="OilNetWeightId" Type="int" Nullable="false" />
+          <Property Name="OilNetWeight1" Type="float" />
+        </EntityType>
+        <EntityType Name="Oils">
+          <Key>
+            <PropertyRef Name="OilId" />
+          </Key>
+          <Property Name="OilId" Type="int" Nullable="false" />
+          <Property Name="OilName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OilMakerId" Type="int" />
+          <Property Name="OilAverageMilage" Type="int" />
+          <Property Name="OilPower" Type="nvarchar" MaxLength="50" />
+          <Property Name="OilPrice" Type="float" />
+          <Property Name="OilDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="OilNetWeightId" Type="int" />
+        </EntityType>
+        <EntityType Name="PetrolAdditives">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="PowerSterringOils">
+          <Key>
+            <PropertyRef Name="PowerStereringOilId" />
+          </Key>
+          <Property Name="PowerStereringOilId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PowerSterringOilName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PowerSterringOilCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="PowerSterringOilPrice" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Price" Type="int" />
+        </EntityType>
+        <EntityType Name="SeatFoamSprays">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
         <EntityType Name="testTable">
           <Key>
             <PropertyRef Name="id" />
@@ -66,6 +395,52 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TyreWaxes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="VehicleMakers">
+          <Key>
+            <PropertyRef Name="VehicleMakerId" />
+          </Key>
+          <Property Name="VehicleMakerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleMakerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecordCreatedDate" Type="datetime" />
+          <Property Name="RecCreatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="VehicleModelMakers">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="VehicleId" Type="bigint" Nullable="false" />
+          <Property Name="VehicleMakerId" Type="bigint" />
+          <Property Name="VehicleModelName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FuilingTypeId" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_CustomerVehicles_VehicleModelMaker">
+          <End Role="VehicleModelMakers" Type="Self.VehicleModelMakers" Multiplicity="0..1" />
+          <End Role="CustomerVehicles" Type="Self.CustomerVehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleModelMakers">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="CustomerVehicles">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -122,14 +497,97 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_dbo_Product_dbo_Category_CategoryId">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OilChangeRecords_Oils">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="OilChangeRecords" Type="Self.OilChangeRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="OilChangeRecords">
+              <PropertyRef Name="OilCustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OilFilters_OilFilterMakerCompany">
+          <End Role="OilFilterMakerCompanies" Type="Self.OilFilterMakerCompanies" Multiplicity="0..1" />
+          <End Role="OilFilters" Type="Self.OilFilters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OilFilterMakerCompanies">
+              <PropertyRef Name="OilFilterMakerCompanyId" />
+            </Principal>
+            <Dependent Role="OilFilters">
+              <PropertyRef Name="OilFilterMakerCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oils_OilNetWeight">
+          <End Role="OilMakerCompanies" Type="Self.OilMakerCompanies" Multiplicity="0..1" />
+          <End Role="Oils" Type="Self.Oils" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OilMakerCompanies">
+              <PropertyRef Name="OilMakerId" />
+            </Principal>
+            <Dependent Role="Oils">
+              <PropertyRef Name="OilMakerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="testModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AirFilters" EntityType="Self.AirFilters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutoTransFuels" EntityType="Self.AutoTransFuels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BodyPolishes" EntityType="Self.BodyPolishes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BodyWaxes" EntityType="Self.BodyWaxes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BrakeOils" EntityType="Self.BrakeOils" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarShampoos" EntityType="Self.CarShampoos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coolents" EntityType="Self.Coolents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerVehicles" EntityType="Self.CustomerVehicles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distributors" EntityType="Self.Distributors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dustors" EntityType="Self.Dustors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EngineSprays" EntityType="Self.EngineSprays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InternalSprays" EntityType="Self.InternalSprays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ManualTransFuels" EntityType="Self.ManualTransFuels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MicroFibres" EntityType="Self.MicroFibres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilChangeRecords" EntityType="Self.OilChangeRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilFilterMakerCompanies" EntityType="Self.OilFilterMakerCompanies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilFilters" EntityType="Self.OilFilters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilMakerCompanies" EntityType="Self.OilMakerCompanies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OilNetWeights" EntityType="Self.OilNetWeights" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oils" EntityType="Self.Oils" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PetrolAdditives" EntityType="Self.PetrolAdditives" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerSterringOils" EntityType="Self.PowerSterringOils" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeatFoamSprays" EntityType="Self.SeatFoamSprays" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="testTable" EntityType="Self.testTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TyreWaxes" EntityType="Self.TyreWaxes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleMakers" EntityType="Self.VehicleMakers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleModelMakers" EntityType="Self.VehicleModelMakers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CustomerVehicles_VehicleModelMaker" Association="Self.FK_CustomerVehicles_VehicleModelMaker">
+            <End Role="VehicleModelMakers" EntitySet="VehicleModelMakers" />
+            <End Role="CustomerVehicles" EntitySet="CustomerVehicles" />
+          </AssociationSet>
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -146,9 +604,24 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
           </AssociationSet>
+          <AssociationSet Name="FK_dbo_Product_dbo_Category_CategoryId" Association="Self.FK_dbo_Product_dbo_Category_CategoryId">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OilChangeRecords_Oils" Association="Self.FK_OilChangeRecords_Oils">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="OilChangeRecords" EntitySet="OilChangeRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OilFilters_OilFilterMakerCompany" Association="Self.FK_OilFilters_OilFilterMakerCompany">
+            <End Role="OilFilterMakerCompanies" EntitySet="OilFilterMakerCompanies" />
+            <End Role="OilFilters" EntitySet="OilFilters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oils_OilNetWeight" Association="Self.FK_Oils_OilNetWeight">
+            <End Role="OilMakerCompanies" EntitySet="OilMakerCompanies" />
+            <End Role="Oils" EntitySet="Oils" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -262,7 +735,491 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
+          <EntitySet Name="AirFilters" EntityType="testModel.AirFilter" />
+          <EntitySet Name="AutoTransFuels" EntityType="testModel.AutoTransFuel" />
+          <EntitySet Name="BodyPolishes" EntityType="testModel.BodyPolish" />
+          <EntitySet Name="BodyWaxes" EntityType="testModel.BodyWax" />
+          <EntitySet Name="BrakeOils" EntityType="testModel.BrakeOil" />
+          <EntitySet Name="CarShampoos" EntityType="testModel.CarShampoo" />
+          <EntitySet Name="Categories" EntityType="testModel.Category" />
+          <EntitySet Name="Coolents" EntityType="testModel.Coolent" />
+          <EntitySet Name="Customers" EntityType="testModel.Customer" />
+          <EntitySet Name="CustomerVehicles" EntityType="testModel.CustomerVehicle" />
+          <EntitySet Name="Distributors" EntityType="testModel.Distributor" />
+          <EntitySet Name="Dustors" EntityType="testModel.Dustor" />
+          <EntitySet Name="EngineSprays" EntityType="testModel.EngineSpray" />
+          <EntitySet Name="InternalSprays" EntityType="testModel.InternalSpray" />
+          <EntitySet Name="ManualTransFuels" EntityType="testModel.ManualTransFuel" />
+          <EntitySet Name="MicroFibres" EntityType="testModel.MicroFibre" />
+          <EntitySet Name="OilChangeRecords" EntityType="testModel.OilChangeRecord" />
+          <EntitySet Name="OilFilterMakerCompanies" EntityType="testModel.OilFilterMakerCompany" />
+          <EntitySet Name="OilFilters" EntityType="testModel.OilFilter" />
+          <EntitySet Name="OilMakerCompanies" EntityType="testModel.OilMakerCompany" />
+          <EntitySet Name="OilNetWeights" EntityType="testModel.OilNetWeight" />
+          <EntitySet Name="Oils" EntityType="testModel.Oil" />
+          <EntitySet Name="PetrolAdditives" EntityType="testModel.PetrolAdditive" />
+          <EntitySet Name="PowerSterringOils" EntityType="testModel.PowerSterringOil" />
+          <EntitySet Name="Products" EntityType="testModel.Product" />
+          <EntitySet Name="SeatFoamSprays" EntityType="testModel.SeatFoamSpray" />
+          <EntitySet Name="TyreWaxes" EntityType="testModel.TyreWax" />
+          <EntitySet Name="VehicleMakers" EntityType="testModel.VehicleMaker" />
+          <EntitySet Name="VehicleModelMakers" EntityType="testModel.VehicleModelMaker" />
+          <AssociationSet Name="FK_dbo_Product_dbo_Category_CategoryId" Association="testModel.FK_dbo_Product_dbo_Category_CategoryId">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OilChangeRecords_Oils" Association="testModel.FK_OilChangeRecords_Oils">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="OilChangeRecord" EntitySet="OilChangeRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerVehicles_VehicleModelMaker" Association="testModel.FK_CustomerVehicles_VehicleModelMaker">
+            <End Role="VehicleModelMaker" EntitySet="VehicleModelMakers" />
+            <End Role="CustomerVehicle" EntitySet="CustomerVehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OilFilters_OilFilterMakerCompany" Association="testModel.FK_OilFilters_OilFilterMakerCompany">
+            <End Role="OilFilterMakerCompany" EntitySet="OilFilterMakerCompanies" />
+            <End Role="OilFilter" EntitySet="OilFilters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oils_OilNetWeight" Association="testModel.FK_Oils_OilNetWeight">
+            <End Role="OilMakerCompany" EntitySet="OilMakerCompanies" />
+            <End Role="Oil" EntitySet="Oils" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="AirFilter">
+          <Key>
+            <PropertyRef Name="AilFilterId" />
+          </Key>
+          <Property Name="AilFilterId" Type="Int32" Nullable="false" />
+          <Property Name="AirFilterName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AirFilterPrice" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AutoTransFuel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BodyPolish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BodyWax">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BrakeOil">
+          <Key>
+            <PropertyRef Name="BrakeOilId" />
+          </Key>
+          <Property Name="BrakeOilId" Type="Int32" Nullable="false" />
+          <Property Name="BrakeOilName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrakeOilCompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrakeOilPrice" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarShampoo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="testModel.FK_dbo_Product_dbo_Category_CategoryId" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Coolent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerMobileNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerMobileNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerLandline" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CustomerDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OilChangeRecords" Relationship="testModel.FK_OilChangeRecords_Oils" FromRole="Customer" ToRole="OilChangeRecord" />
+        </EntityType>
+        <EntityType Name="CustomerVehicle">
+          <Key>
+            <PropertyRef Name="CustomerVehicleId" />
+          </Key>
+          <Property Name="CustomerVehicleId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="VehicleId" Type="Int64" />
+          <Property Name="VehiclePlateAlphabets" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehiclePlateNumbers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehiclePlateYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleManufacturingYear" Type="Int32" />
+          <Property Name="VehicleDailyRunningKms" Type="Int32" />
+          <NavigationProperty Name="VehicleModelMaker" Relationship="testModel.FK_CustomerVehicles_VehicleModelMaker" FromRole="CustomerVehicle" ToRole="VehicleModelMaker" />
+        </EntityType>
+        <EntityType Name="Distributor">
+          <Key>
+            <PropertyRef Name="DistributorId" />
+          </Key>
+          <Property Name="DistributorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistributorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Dustor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EngineSpray">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="InternalSpray">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ManualTransFuel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MicroFibre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OilChangeRecord">
+          <Key>
+            <PropertyRef Name="OilChangeRecordId" />
+          </Key>
+          <Property Name="OilChangeRecordId" Type="Int32" Nullable="false" />
+          <Property Name="OilCustomerId" Type="Int32" />
+          <Property Name="OilId" Type="Int32" />
+          <Property Name="CustomerVehicleId" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="testModel.FK_OilChangeRecords_Oils" FromRole="OilChangeRecord" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="OilFilterMakerCompany">
+          <Key>
+            <PropertyRef Name="OilFilterMakerCompanyId" />
+          </Key>
+          <Property Name="OilFilterMakerCompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OilFilterMakerCompanyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OilFilterMakerCompanyDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OilFilters" Relationship="testModel.FK_OilFilters_OilFilterMakerCompany" FromRole="OilFilterMakerCompany" ToRole="OilFilter" />
+        </EntityType>
+        <EntityType Name="OilFilter">
+          <Key>
+            <PropertyRef Name="OilFilterId" />
+          </Key>
+          <Property Name="OilFilterId" Type="Int32" Nullable="false" />
+          <Property Name="OilFilterName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OilFilterPrice" Type="Double" Nullable="false" />
+          <Property Name="OilFilterMakerCompanyId" Type="Int32" />
+          <NavigationProperty Name="OilFilterMakerCompany" Relationship="testModel.FK_OilFilters_OilFilterMakerCompany" FromRole="OilFilter" ToRole="OilFilterMakerCompany" />
+        </EntityType>
+        <EntityType Name="OilMakerCompany">
+          <Key>
+            <PropertyRef Name="OilMakerId" />
+          </Key>
+          <Property Name="OilMakerId" Type="Int32" Nullable="false" />
+          <Property Name="OilMakerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Oils" Relationship="testModel.FK_Oils_OilNetWeight" FromRole="OilMakerCompany" ToRole="Oil" />
+        </EntityType>
+        <EntityType Name="OilNetWeight">
+          <Key>
+            <PropertyRef Name="OilNetWeightId" />
+          </Key>
+          <Property Name="OilNetWeightId" Type="Int32" Nullable="false" />
+          <Property Name="OilNetWeight1" Type="Double" />
+        </EntityType>
+        <EntityType Name="Oil">
+          <Key>
+            <PropertyRef Name="OilId" />
+          </Key>
+          <Property Name="OilId" Type="Int32" Nullable="false" />
+          <Property Name="OilName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OilMakerId" Type="Int32" />
+          <Property Name="OilAverageMilage" Type="Int32" />
+          <Property Name="OilPower" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OilPrice" Type="Double" />
+          <Property Name="OilDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OilNetWeightId" Type="Int32" />
+          <NavigationProperty Name="OilMakerCompany" Relationship="testModel.FK_Oils_OilNetWeight" FromRole="Oil" ToRole="OilMakerCompany" />
+        </EntityType>
+        <EntityType Name="PetrolAdditive">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PowerSterringOil">
+          <Key>
+            <PropertyRef Name="PowerStereringOilId" />
+          </Key>
+          <Property Name="PowerStereringOilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PowerSterringOilName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PowerSterringOilCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PowerSterringOilPrice" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="testModel.FK_dbo_Product_dbo_Category_CategoryId" FromRole="Product" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="SeatFoamSpray">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TyreWax">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VehicleMaker">
+          <Key>
+            <PropertyRef Name="VehicleMakerId" />
+          </Key>
+          <Property Name="VehicleMakerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleMakerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecordCreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="RecCreatedBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VehicleModelMaker">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="VehicleId" Type="Int64" Nullable="false" />
+          <Property Name="VehicleMakerId" Type="Int64" />
+          <Property Name="VehicleModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FuilingTypeId" Type="Int64" />
+          <NavigationProperty Name="CustomerVehicles" Relationship="testModel.FK_CustomerVehicles_VehicleModelMaker" FromRole="VehicleModelMaker" ToRole="CustomerVehicle" />
+        </EntityType>
+        <Association Name="FK_dbo_Product_dbo_Category_CategoryId">
+          <End Type="testModel.Category" Role="Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="testModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OilChangeRecords_Oils">
+          <End Type="testModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="testModel.OilChangeRecord" Role="OilChangeRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="OilChangeRecord">
+              <PropertyRef Name="OilCustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerVehicles_VehicleModelMaker">
+          <End Type="testModel.VehicleModelMaker" Role="VehicleModelMaker" Multiplicity="0..1" />
+          <End Type="testModel.CustomerVehicle" Role="CustomerVehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleModelMaker">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="CustomerVehicle">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OilFilters_OilFilterMakerCompany">
+          <End Type="testModel.OilFilterMakerCompany" Role="OilFilterMakerCompany" Multiplicity="0..1" />
+          <End Type="testModel.OilFilter" Role="OilFilter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OilFilterMakerCompany">
+              <PropertyRef Name="OilFilterMakerCompanyId" />
+            </Principal>
+            <Dependent Role="OilFilter">
+              <PropertyRef Name="OilFilterMakerCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oils_OilNetWeight">
+          <End Type="testModel.OilMakerCompany" Role="OilMakerCompany" Multiplicity="0..1" />
+          <End Type="testModel.Oil" Role="Oil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OilMakerCompany">
+              <PropertyRef Name="OilMakerId" />
+            </Principal>
+            <Dependent Role="Oil">
+              <PropertyRef Name="OilMakerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -333,6 +1290,398 @@
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="AirFilters">
+            <EntityTypeMapping TypeName="testModel.AirFilter">
+              <MappingFragment StoreEntitySet="AirFilters">
+                <ScalarProperty Name="AirFilterPrice" ColumnName="AirFilterPrice" />
+                <ScalarProperty Name="AirFilterName" ColumnName="AirFilterName" />
+                <ScalarProperty Name="AilFilterId" ColumnName="AilFilterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutoTransFuels">
+            <EntityTypeMapping TypeName="testModel.AutoTransFuel">
+              <MappingFragment StoreEntitySet="AutoTransFuels">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BodyPolishes">
+            <EntityTypeMapping TypeName="testModel.BodyPolish">
+              <MappingFragment StoreEntitySet="BodyPolishes">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BodyWaxes">
+            <EntityTypeMapping TypeName="testModel.BodyWax">
+              <MappingFragment StoreEntitySet="BodyWaxes">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrakeOils">
+            <EntityTypeMapping TypeName="testModel.BrakeOil">
+              <MappingFragment StoreEntitySet="BrakeOils">
+                <ScalarProperty Name="BrakeOilPrice" ColumnName="BrakeOilPrice" />
+                <ScalarProperty Name="BrakeOilCompanyName" ColumnName="BrakeOilCompanyName" />
+                <ScalarProperty Name="BrakeOilName" ColumnName="BrakeOilName" />
+                <ScalarProperty Name="BrakeOilId" ColumnName="BrakeOilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarShampoos">
+            <EntityTypeMapping TypeName="testModel.CarShampoo">
+              <MappingFragment StoreEntitySet="CarShampoos">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="testModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coolents">
+            <EntityTypeMapping TypeName="testModel.Coolent">
+              <MappingFragment StoreEntitySet="Coolents">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="testModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerDescription" ColumnName="CustomerDescription" />
+                <ScalarProperty Name="CustomerCreatedDate" ColumnName="CustomerCreatedDate" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerEmailAddress" ColumnName="CustomerEmailAddress" />
+                <ScalarProperty Name="CustomerLandline" ColumnName="CustomerLandline" />
+                <ScalarProperty Name="CustomerMobileNumber2" ColumnName="CustomerMobileNumber2" />
+                <ScalarProperty Name="CustomerMobileNumber1" ColumnName="CustomerMobileNumber1" />
+                <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+                <ScalarProperty Name="CustomerMiddleName" ColumnName="CustomerMiddleName" />
+                <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerVehicles">
+            <EntityTypeMapping TypeName="testModel.CustomerVehicle">
+              <MappingFragment StoreEntitySet="CustomerVehicles">
+                <ScalarProperty Name="VehicleDailyRunningKms" ColumnName="VehicleDailyRunningKms" />
+                <ScalarProperty Name="VehicleManufacturingYear" ColumnName="VehicleManufacturingYear" />
+                <ScalarProperty Name="VehiclePlateYear" ColumnName="VehiclePlateYear" />
+                <ScalarProperty Name="VehiclePlateNumbers" ColumnName="VehiclePlateNumbers" />
+                <ScalarProperty Name="VehiclePlateAlphabets" ColumnName="VehiclePlateAlphabets" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CustomerVehicleId" ColumnName="CustomerVehicleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distributors">
+            <EntityTypeMapping TypeName="testModel.Distributor">
+              <MappingFragment StoreEntitySet="Distributors">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="DistributorName" ColumnName="DistributorName" />
+                <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dustors">
+            <EntityTypeMapping TypeName="testModel.Dustor">
+              <MappingFragment StoreEntitySet="Dustors">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EngineSprays">
+            <EntityTypeMapping TypeName="testModel.EngineSpray">
+              <MappingFragment StoreEntitySet="EngineSprays">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternalSprays">
+            <EntityTypeMapping TypeName="testModel.InternalSpray">
+              <MappingFragment StoreEntitySet="InternalSprays">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManualTransFuels">
+            <EntityTypeMapping TypeName="testModel.ManualTransFuel">
+              <MappingFragment StoreEntitySet="ManualTransFuels">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MicroFibres">
+            <EntityTypeMapping TypeName="testModel.MicroFibre">
+              <MappingFragment StoreEntitySet="MicroFibres">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilChangeRecords">
+            <EntityTypeMapping TypeName="testModel.OilChangeRecord">
+              <MappingFragment StoreEntitySet="OilChangeRecords">
+                <ScalarProperty Name="CustomerVehicleId" ColumnName="CustomerVehicleId" />
+                <ScalarProperty Name="OilId" ColumnName="OilId" />
+                <ScalarProperty Name="OilCustomerId" ColumnName="OilCustomerId" />
+                <ScalarProperty Name="OilChangeRecordId" ColumnName="OilChangeRecordId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilFilterMakerCompanies">
+            <EntityTypeMapping TypeName="testModel.OilFilterMakerCompany">
+              <MappingFragment StoreEntitySet="OilFilterMakerCompanies">
+                <ScalarProperty Name="OilFilterMakerCompanyDescription" ColumnName="OilFilterMakerCompanyDescription" />
+                <ScalarProperty Name="OilFilterMakerCompanyName" ColumnName="OilFilterMakerCompanyName" />
+                <ScalarProperty Name="OilFilterMakerCompanyId" ColumnName="OilFilterMakerCompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilFilters">
+            <EntityTypeMapping TypeName="testModel.OilFilter">
+              <MappingFragment StoreEntitySet="OilFilters">
+                <ScalarProperty Name="OilFilterMakerCompanyId" ColumnName="OilFilterMakerCompanyId" />
+                <ScalarProperty Name="OilFilterPrice" ColumnName="OilFilterPrice" />
+                <ScalarProperty Name="OilFilterName" ColumnName="OilFilterName" />
+                <ScalarProperty Name="OilFilterId" ColumnName="OilFilterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilMakerCompanies">
+            <EntityTypeMapping TypeName="testModel.OilMakerCompany">
+              <MappingFragment StoreEntitySet="OilMakerCompanies">
+                <ScalarProperty Name="OilMakerName" ColumnName="OilMakerName" />
+                <ScalarProperty Name="OilMakerId" ColumnName="OilMakerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OilNetWeights">
+            <EntityTypeMapping TypeName="testModel.OilNetWeight">
+              <MappingFragment StoreEntitySet="OilNetWeights">
+                <ScalarProperty Name="OilNetWeight1" ColumnName="OilNetWeight1" />
+                <ScalarProperty Name="OilNetWeightId" ColumnName="OilNetWeightId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oils">
+            <EntityTypeMapping TypeName="testModel.Oil">
+              <MappingFragment StoreEntitySet="Oils">
+                <ScalarProperty Name="OilNetWeightId" ColumnName="OilNetWeightId" />
+                <ScalarProperty Name="OilDescription" ColumnName="OilDescription" />
+                <ScalarProperty Name="OilPrice" ColumnName="OilPrice" />
+                <ScalarProperty Name="OilPower" ColumnName="OilPower" />
+                <ScalarProperty Name="OilAverageMilage" ColumnName="OilAverageMilage" />
+                <ScalarProperty Name="OilMakerId" ColumnName="OilMakerId" />
+                <ScalarProperty Name="OilName" ColumnName="OilName" />
+                <ScalarProperty Name="OilId" ColumnName="OilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PetrolAdditives">
+            <EntityTypeMapping TypeName="testModel.PetrolAdditive">
+              <MappingFragment StoreEntitySet="PetrolAdditives">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerSterringOils">
+            <EntityTypeMapping TypeName="testModel.PowerSterringOil">
+              <MappingFragment StoreEntitySet="PowerSterringOils">
+                <ScalarProperty Name="PowerSterringOilPrice" ColumnName="PowerSterringOilPrice" />
+                <ScalarProperty Name="PowerSterringOilCompany" ColumnName="PowerSterringOilCompany" />
+                <ScalarProperty Name="PowerSterringOilName" ColumnName="PowerSterringOilName" />
+                <ScalarProperty Name="PowerStereringOilId" ColumnName="PowerStereringOilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="testModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeatFoamSprays">
+            <EntityTypeMapping TypeName="testModel.SeatFoamSpray">
+              <MappingFragment StoreEntitySet="SeatFoamSprays">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TyreWaxes">
+            <EntityTypeMapping TypeName="testModel.TyreWax">
+              <MappingFragment StoreEntitySet="TyreWaxes">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleMakers">
+            <EntityTypeMapping TypeName="testModel.VehicleMaker">
+              <MappingFragment StoreEntitySet="VehicleMakers">
+                <ScalarProperty Name="RecCreatedBy" ColumnName="RecCreatedBy" />
+                <ScalarProperty Name="RecordCreatedDate" ColumnName="RecordCreatedDate" />
+                <ScalarProperty Name="VehicleMakerName" ColumnName="VehicleMakerName" />
+                <ScalarProperty Name="VehicleMakerId" ColumnName="VehicleMakerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleModelMakers">
+            <EntityTypeMapping TypeName="testModel.VehicleModelMaker">
+              <MappingFragment StoreEntitySet="VehicleModelMakers">
+                <ScalarProperty Name="FuilingTypeId" ColumnName="FuilingTypeId" />
+                <ScalarProperty Name="VehicleModelName" ColumnName="VehicleModelName" />
+                <ScalarProperty Name="VehicleMakerId" ColumnName="VehicleMakerId" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

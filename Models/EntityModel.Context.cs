@@ -31,5 +31,34 @@ namespace WebApplication3.Models
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<testTable> testTables { get; set; }
+        public virtual DbSet<AirFilter> AirFilters { get; set; }
+        public virtual DbSet<AutoTransFuel> AutoTransFuels { get; set; }
+        public virtual DbSet<BodyPolish> BodyPolishes { get; set; }
+        public virtual DbSet<BodyWax> BodyWaxes { get; set; }
+        public virtual DbSet<BrakeOil> BrakeOils { get; set; }
+        public virtual DbSet<CarShampoo> CarShampoos { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Coolent> Coolents { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CustomerVehicle> CustomerVehicles { get; set; }
+        public virtual DbSet<Distributor> Distributors { get; set; }
+        public virtual DbSet<Dustor> Dustors { get; set; }
+        public virtual DbSet<EngineSpray> EngineSprays { get; set; }
+        public virtual DbSet<InternalSpray> InternalSprays { get; set; }
+        public virtual DbSet<ManualTransFuel> ManualTransFuels { get; set; }
+        public virtual DbSet<MicroFibre> MicroFibres { get; set; }
+        public virtual DbSet<OilChangeRecord> OilChangeRecords { get; set; }
+        public virtual DbSet<OilFilterMakerCompany> OilFilterMakerCompanies { get; set; }
+        public virtual DbSet<OilFilter> OilFilters { get; set; }
+        public virtual DbSet<OilMakerCompany> OilMakerCompanies { get; set; }
+        public virtual DbSet<OilNetWeight> OilNetWeights { get; set; }
+        public virtual DbSet<Oil> Oils { get; set; }
+        public virtual DbSet<PetrolAdditive> PetrolAdditives { get; set; }
+        public virtual DbSet<PowerSterringOil> PowerSterringOils { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<SeatFoamSpray> SeatFoamSprays { get; set; }
+        public virtual DbSet<TyreWax> TyreWaxes { get; set; }
+        public virtual DbSet<VehicleMaker> VehicleMakers { get; set; }
+        public virtual DbSet<VehicleModelMaker> VehicleModelMakers { get; set; }
     }
 }

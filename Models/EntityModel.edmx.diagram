@@ -14,6 +14,40 @@
         <AssociationConnector Association="testModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" ManuallyRouted="false" />
         <AssociationConnector Association="testModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="testModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="testModel.AirFilter" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="testModel.AutoTransFuel" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="testModel.BodyPolish" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="testModel.BodyWax" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="testModel.BrakeOil" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="testModel.CarShampoo" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="testModel.Category" Width="1.5" PointX="7.75" PointY="1.25" />
+        <EntityTypeShape EntityType="testModel.Coolent" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="testModel.Customer" Width="1.5" PointX="5.75" PointY="11" />
+        <EntityTypeShape EntityType="testModel.CustomerVehicle" Width="1.5" PointX="8" PointY="7" />
+        <EntityTypeShape EntityType="testModel.Distributor" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="testModel.Dustor" Width="1.5" PointX="14.75" PointY="7.75" />
+        <EntityTypeShape EntityType="testModel.EngineSpray" Width="1.5" PointX="7.75" PointY="14.75" />
+        <EntityTypeShape EntityType="testModel.InternalSpray" Width="1.5" PointX="9.75" PointY="14.75" />
+        <EntityTypeShape EntityType="testModel.ManualTransFuel" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="testModel.MicroFibre" Width="1.5" PointX="11.75" PointY="14.75" />
+        <EntityTypeShape EntityType="testModel.OilChangeRecord" Width="1.5" PointX="8" PointY="11.625" />
+        <EntityTypeShape EntityType="testModel.OilFilterMakerCompany" Width="1.5" PointX="10.75" PointY="5" />
+        <EntityTypeShape EntityType="testModel.OilFilter" Width="1.5" PointX="13" PointY="4.875" />
+        <EntityTypeShape EntityType="testModel.OilMakerCompany" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="testModel.OilNetWeight" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="testModel.Oil" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="testModel.PetrolAdditive" Width="1.5" PointX="4.75" PointY="15.75" />
+        <EntityTypeShape EntityType="testModel.PowerSterringOil" Width="1.5" PointX="15.75" PointY="4.75" />
+        <EntityTypeShape EntityType="testModel.Product" Width="1.5" PointX="10" PointY="0.875" />
+        <EntityTypeShape EntityType="testModel.SeatFoamSpray" Width="1.5" PointX="13.75" PointY="15.75" />
+        <EntityTypeShape EntityType="testModel.TyreWax" Width="1.5" PointX="15.75" PointY="15.75" />
+        <EntityTypeShape EntityType="testModel.VehicleMaker" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="testModel.VehicleModelMaker" Width="1.5" PointX="5.75" PointY="7.375" />
+        <AssociationConnector Association="testModel.FK_dbo_Product_dbo_Category_CategoryId" />
+        <AssociationConnector Association="testModel.FK_OilChangeRecords_Oils" />
+        <AssociationConnector Association="testModel.FK_CustomerVehicles_VehicleModelMaker" />
+        <AssociationConnector Association="testModel.FK_OilFilters_OilFilterMakerCompany" />
+        <AssociationConnector Association="testModel.FK_Oils_OilNetWeight" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

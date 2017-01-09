@@ -59,3 +59,6 @@ c:\users\asad\documents\visual studio 2013\Projects\WebApplication3\WebApplicati
 c:\users\asad\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojResolveAssemblyReference.cache
 c:\users\asad\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
 c:\users\asad\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb
+E:\ocmDec\ocmdec\obj\Debug\WebApplication3.csprojResolveAssemblyReference.cache
+E:\ocmDec\ocmdec\obj\Debug\WebApplication3.dll
+E:\ocmDec\ocmdec\obj\Debug\WebApplication3.pdb

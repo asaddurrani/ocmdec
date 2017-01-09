@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Web;
 using System.Web.Http;
-using AspNetIdentity2ExtendingUsersAndRoles.Models;
-using AspNetIdentity2ExtendingUsersAndRoles.Models.RequesModel;
-using AspNetIdentity2ExtendingUsersAndRoles.Models.ResponseModel;
+using WebApplication3.Models;
 
-
-namespace AspNetIdentity2ExtendingUsersAndRoles.Areas.Api.Controllers
+namespace WebApplication3.Areas.Api.Controllers
 {
     public class BrakeOilController : ApiController
     {
-        private test13Entities db = new test13Entities();
+        private ocmModel db = new ocmModel();
         protected IDbSet<Models.BrakeOil> DbSet
         {
             get { return db.BrakeOils; }
